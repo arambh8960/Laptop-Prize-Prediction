@@ -44,15 +44,11 @@ import pickle, json, os
 
 models = [
     ('LinearRegression', LinearRegression()),
-    ('Ridge', Ridge(alpha=10)),
-    ('Lasso', Lasso(alpha=0.001)),
     ('KNN', KNeighborsRegressor(n_neighbors=3)),
     ('DecisionTree', DecisionTreeRegressor(max_depth=8)),
     ('SVR', SVR(kernel='rbf',C=10000,epsilon=0.1)),
-    ('RandomForest', RandomForestRegressor(n_estimators=100,random_state=3,max_samples=0.5,max_features=0.75,max_depth=15)),
-    ('ExtraTrees', ExtraTreesRegressor(n_estimators=100,random_state=3,max_features=0.75,max_depth=15)),
-    ('AdaBoost', AdaBoostRegressor(n_estimators=15,learning_rate=1.0)),
-    ('GradientBoost', GradientBoostingRegressor(n_estimators=500))
+    ('RandomForest', RandomForestRegressor(n_estimators=100,random_state=3,max_samples=0.5,max_features=0.75,max_depth=15))
+    
 ]
 
 metrics = {}
@@ -97,4 +93,5 @@ import pickle
 
 pickle.dump(df,open('df.pkl','wb'))
 print(df)
+
  
